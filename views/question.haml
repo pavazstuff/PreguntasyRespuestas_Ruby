@@ -1,0 +1,26 @@
+.mostrarpreg
+
+	%a{:href => '/', :class => 'regresar'} Regresar al inicio
+
+	.titulopreg
+		- if  @titulopregunta[0][:pregunta][0] != "¿"
+			- if  @titulopregunta[0][:pregunta][-1] != "?"
+				%h2= "¿" <<  @titulopregunta[0][:pregunta] << "?"
+			- else
+				%h2= "¿" <<  @titulopregunta[0][:pregunta]
+		-else
+			%h2=  @titulopregunta[0][:pregunta] << "?"
+		%p= @preguntayrespuestas[0][:contenido]
+
+	- if @conteo > 0
+		.respuestasde
+			- @preguntayrespuestas.each do |respuesta|
+				%p{:class => 'answer'}= respuesta[:respuesta]
+
+	.nuevo
+		%h3{:class => 'nuevo-title'} Nueva respuesta
+		%form{:action => '/pregunta', :method => 'post'}
+			%label{:class => 'nuevo-lbl'} respuesta
+			%input{:type => 'hidden', :name => 'id', :value => "#{@preguntayrespuestas[0][:id]}"}
+			%textarea{:name => 'respuesta', :rows => '7', :class => 'nuevo-box'}
+			%input{:type => 'submit', :value => 'Enviar Respuesta', :class => 'nuevo-btn'}

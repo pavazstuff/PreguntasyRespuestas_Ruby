@@ -1,0 +1,12 @@
+.nuevapreg
+	%a{:href => '/', :class => 'regresar'} Regresar al inicio
+
+	%h2{:class => 'nuevo-title'} Nueva pregunta
+	
+	%form{:method => 'post'}
+		%label{:for => 'pregunta', :class => 'nuevo-lbl'} Pregunta
+		%input{:type => 'text', :name => 'pregunta', :id => 'pregunta', :class => 'nuevo-box'}
+		%label{:for => 'contenido', :class => 'nuevo-lbl'} Descripcion
+		%textarea{:name => 'contenido', :rows => '7', :id => 'contenido', :class => 'nuevo-area'}
+
+		%input{:type => 'submit', :value => 'Enviar pregunta', :class => 'nuevo-btn'}

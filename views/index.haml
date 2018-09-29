@@ -1,0 +1,16 @@
+.home
+	- @preguntas.reverse_each do |pregunta|
+		.pregunta
+			%a{:href => "/pregunta?id=#{pregunta[:id]}", :class => 'link-pregunta'}
+
+				- if pregunta[:pregunta][0] != "¿"
+					- if pregunta[:pregunta][-1] != "?"
+						%h2= "¿" << pregunta[:pregunta] << "?"
+					- else
+						%h2= "¿" << pregunta[:pregunta]
+				-else
+					%h2= pregunta[:pregunta] << "?"
+
+			%p{:class => 'descripcion'}
+				%span{:class => 'texto'}= pregunta[:contenido][0..35] << "..."
+				%a{:href => "/pregunta?id=#{pregunta[:id]}", :class => 'link-mas'} Ver pregunta

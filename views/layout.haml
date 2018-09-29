@@ -1,0 +1,33 @@
+!!!
+%html
+	%head
+		%title Preguntas y Respuestas
+		%meta{:charset => 'utf-8'}
+		%meta{:name => 'viewport', :content => 'device-width=1,initial-scale=1,user-scalable=no'}
+		%meta{:name => 'keywords', :content => 'preguntas, respuestas, libre conocimiento, compartir informacion'}
+		%meta{:name => 'description', :content => 'Este es un sitio de preguntas y respuestas para ayudar a las personas que lo necesiten'}
+		%meta{:name => 'author', :content => 'Paris Emmanuel Vazquez Venzor'}
+		%link{:href => 'https://fonts.googleapis.com/css?family=Source+Sans+Pro', :rel => 'stylesheet', :type => 'text/css'}
+		%link{:href => 'css/main.css', :rel => 'stylesheet', :type => 'text/css'}
+	%body
+		.page
+			/msj subliminal donde la autoridad no es nada mas y nada menos que hittler!!
+			.header
+				%h1
+					%span{:class => 'titulo-preg'} Preguntas 
+					%span{:class => 'titulo-resp'} y Respuestas
+				.nav
+					%a{:href => '/', :class => 'nav-item'} Inicio
+					%a{:href => '/nuevo', :class => 'nav-item'} Preguntar
+					%a{:href => '/acercade', :class => 'nav-item'} Acerda de
+					%a{:href => 'https://www.facebook.com/pavazstuff', :class => 'nav-item', :target => '_blank'} Facebook
+					%a{:href => 'https://twitter.com/pavazstuff', :class => 'nav-item', :target => '_blank'} Twitter
+					%a{:href => 'http://parisvazlife.blogspot.mx', :class => 'nav-item', :target => '_blank'} Blogger
+					%a{:href => 'https://www.youtube.com/channel/UC0EiXtyAaHvoR956F4BN-Zw', :class => 'nav-item', :target => '_blank'} Youtube
+
+			/no intente hackearme
+			.container= yield
+
+			.footer
+				&copy; Perix Enterprise 2017.
+				/puto el que lo lea
